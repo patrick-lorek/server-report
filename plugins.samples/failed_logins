@@ -2,6 +2,7 @@
 #
 # This script counts all failed logins of all time and yesterday 
 #
+LANG=en_us_8859_1
 
 failed_login_count_all_time=$(cat /var/log/auth.log | grep 'Failed password' | wc -l)
 failed_login_count_yesterday=$(cat /var/log/auth.log | grep 'Failed password' | grep "$(date -d "yesterday" '+%b') $(date -d "yesterday" '+%e')" | wc -l) 
